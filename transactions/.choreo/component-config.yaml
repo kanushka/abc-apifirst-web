@@ -8,10 +8,10 @@ metadata:
 spec:
   inbound:
     - name: transactions
-      port: 3000
+      port: 9092
       type: REST
       visibility: Organization
-      context: .
+      context: "/transaction"
       schemaFilePath: openapi.yaml
   outbound:
     serviceReferences:

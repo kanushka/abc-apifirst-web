@@ -8,8 +8,8 @@ metadata:
 spec:
   inbound:
     - name: notifications
-      port: 3000
+      port: 9095
       type: REST
       visibility: Project
-      context: .
+      context: "/notification"
       schemaFilePath: openapi.yaml

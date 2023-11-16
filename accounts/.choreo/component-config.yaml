@@ -8,8 +8,8 @@ metadata:
 spec:
   inbound:
     - name: accounts
-      port: 3000
+      port: 9094
       type: REST
       visibility: Project
-      context: .
+      context: "/accounts"
       schemaFilePath: openapi.yaml

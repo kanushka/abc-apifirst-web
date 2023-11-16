@@ -8,10 +8,10 @@ metadata:
 spec:
   inbound:
     - name: tickets
-      port: 3000
+      port: 9093
       type: REST
       visibility: Public
-      context: .
+      context: "/support"
       schemaFilePath: openapi.yaml
   outbound:
     serviceReferences:
