@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: Transaction Service
+  description: Manages financial transactions for FinFlux Microservices.
+  version: "1.0.0"
+servers:
+  - url: 'https://api.finflux.com/transaction'
+paths:
+  /transactions:
+    get:
+      summary: Retrieve a list of transactions for an account
+      responses:
+        '200':
+          description: An array of transactions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+  /transfer:
+    post:
+      summary: Perform a funds transfer between accounts
+      responses:
+        '202':
+          description: Transfer accepted
+components:
+  schemas:
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        accountNumber:
+          type: string
+        type:
+          type: string
+          enum: [deposit, withdrawal, transfer]
+        amount:
+          type: number
+          format: float
+        timestamp:
+          type: string
+          format: date-time
