@@ -13,3 +13,15 @@ spec:
       visibility: Public
       context: .
       schemaFilePath: openapi.yaml
+  outbound:
+    serviceReferences:
+      - name: choreo:///kanushkagayan/wknh/umaikp/ac468/v1.0/PROJECT
+        connectionConfig: 01ee843a-64d9-15b8-ae82-8c5d306e899e
+        env:
+          - from: ServiceURL
+            to: TRANSACTION_SERVICE_URL
+      - name: choreo:///kanushkagayan/wknh/xxkhcb/dec73/v1.0/PROJECT
+        connectionConfig: 01ee843a-4411-1066-8828-55fa95c98958
+        env:
+        - from: ServiceURL
+          to: NOTIFICATION_SERVICE_URL
