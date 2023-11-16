@@ -10,6 +10,6 @@ spec:
     - name: transactions
       port: 3000
       type: REST
-      visibility: Project
+      visibility: Organization
       context: .
       schemaFilePath: openapi.yaml
