@@ -5,4 +5,7 @@ metadata:
   projectName: FinFlux
   annotations:
     componentType: web-app
-spec: {}
+spec:
+  webAppInbound:
+    - visibility: Public
+      invokeURL: "/web-app"
