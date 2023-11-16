@@ -1,26 +1,40 @@
 openapi: 3.0.0
 info:
-  title: tickets
-  version: 1.0.0
+  title: Customer Support Service
+  description: Manages customer interactions and support tickets for FinFlux Microservices.
+  version: "1.0.0"
+servers:
+  - url: 'https://api.finflux.com/support'
 paths:
-  /*:
+  /tickets:
     get:
-      summary: Retrieve an example resource
+      summary: Get a list of support tickets
       responses:
         '200':
-          description: Successful response
+          description: A list of support tickets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ticket'
     post:
-      summary: Create an example resource
+      summary: Create a new support ticket
       responses:
         '201':
-          description: Resource created successfully
-    put:
-      summary: Update an example resource
-      responses:
-        '200':
-          description: Resource updated successfully
-    delete:
-      summary: Delete an example resource
-      responses:
-        '204':
-          description: Resource deleted successfully
+          description: Support ticket created
+components:
+  schemas:
+    Ticket:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        subject:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum: [open, in_progress, resolved, closed]
