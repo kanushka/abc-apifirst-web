@@ -5,6 +5,17 @@ import ballerina/http;
 listener http:Listener ep0 = new (9092);
 
 service /'transaction on ep0 {
+
+    @display {
+        label: "accounts",
+        id: "f8213eed-0f30-4c4a-94e2-e13ba84f4268"
+    }
+    http:Client accountsClient;
+
+    function init() returns error? {
+        self.accountsClient = check new ("");
+    }
+
     # Retrieve a list of transactions for an account
     #
     # + return - An array of transactions 
