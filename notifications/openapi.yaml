@@ -1,0 +1,14 @@
+openapi: 3.0.0
+info:
+  title: Notification Service
+  description: Sends notifications and alerts to FinFlux Microservices customers.
+  version: "1.0.0"
+servers:
+  - url: 'https://api.finflux.com/notification'
+paths:
+  /notifications:
+    post:
+      summary: Send a notification to a user
+      responses:
+        '202':
+          description: Notification sent
