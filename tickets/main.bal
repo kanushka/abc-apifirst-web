@@ -3,7 +3,7 @@
 
 import ballerina/http;
 
-listener http:Listener ep0 = new (443, config = {host: "api.finflux.com"});
+listener http:Listener ep0 = new (9093);
 
 service /support on ep0 {
     # Get a list of support tickets
